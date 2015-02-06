@@ -1,11 +1,18 @@
 <?php
-	# Wordpress plugin for writing login attempts to a file
-
+/**
+ *	Plugin Name: Login logging
+ * 	Description: Write all login attempts to a logfile
+ *	Author: https://github.com/tarppa/
+ * 	Version: 0
+ */
 	function log_write() {
-	    
+	
+	# get login data    
 	$content = "timestamp-username-failed/successful\n";
-
-	$handle = fopen('login.log','a+');
+	
+	
+	# write to file
+	$handle = fopen('/home/tari/data/log/login.log','a+');
 	fwrite($handle,$content)
 	fclose($handle);
 	}
