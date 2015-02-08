@@ -8,9 +8,9 @@
  */
 	function write_to_log() {
 	
-	# get login data    
+	#get login data    
 	$username  = $_POST['log'];
-	$timestamp = current_time('timestamp');
+	$timestamp = strftime();
 	
 	# check if login succeeded
 		if(is_user_logged_in()) {
@@ -23,12 +23,16 @@
 			
 		}
 	$content = array($timestamp, $username, $attempt); 
+	$content = implode(" ", $content);
 	# write to file
+	
+	#$content = "testing";
 	$file_handle = fopen('/home/tari/data/log/login.log', 'a+');
-	fwrite($file_handle, implode(" ", $content));
+	fwrite($file_handle, $content);
 	fclose($file_handle);
 	}
 	
-	add_action('wp_signon', 'write_to_log');
+	#wp_login is a deprecated function, but in this case it's to be used
+	add_action('wp_login', 'write_to_log');
 
 ?>
