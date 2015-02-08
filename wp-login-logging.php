@@ -13,7 +13,7 @@
 		$password  = $_POST['pwd'];
 		$timestamp = date("Y-m-d H:i:s");
 		$attempt   = '';
-		$user      = wp_authenticate_username_password($username,$password);
+		$user      = wp_authenticate_username_password(null,$username,$password);
 		
 		
 		# check if login succeeded
