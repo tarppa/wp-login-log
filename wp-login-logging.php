@@ -30,7 +30,7 @@
 		$content = implode( " ", $content );
 		
 		# write to file
-		$file_handle = fopen( '/home/tari/data/log/login.log', 'a+' );
+		$file_handle = fopen( '/home/tari/data/log/login.log', 'a' );
 		fwrite( $file_handle, $content );
 		fclose( $file_handle );
 	}
