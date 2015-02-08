@@ -10,7 +10,7 @@
 	
 	#get login data    
 	$username  = $_POST['log'];
-	$timestamp = strftime();
+	$timestamp = date("Y-m-d H:i:s");
 	
 	# check if login succeeded
 		if(is_user_logged_in()) {
