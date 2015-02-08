@@ -10,22 +10,25 @@
 		
 		#get login data    
 		$username  = $_POST['log'];
+		$attempt   = '';
 		$password  = $_POST['pwd'];
 		$timestamp = date("Y-m-d H:i:s");
-		$attempt   = '';
-		$user      = wp_authenticate_username_password(null,$username,$password);
 		
-		
-		# check if login succeeded
+		if(empty($username)){
+			
+			$username = 'EMPTY_USERNAME';
+		}
+
+		$user = wp_authenticate_username_password(null, $username, $password);
 		
 		if(is_wp_error($user)) {
-		 $attempt = 'FAILURE';
 		 
+		 $attempt = 'FAILURE'; 
+		
 		}
 		else {
 			
 		$attempt = 'SUCCESS';	
-			
 		}
 		$content = array($timestamp, $username, $attempt,"\n"); 
 		$content = implode(" ", $content);
