@@ -7,32 +7,36 @@
  *  License: NO WARRANTY. DO WHATEVER YOU LIKE WITH THIS
  */
 	function write_to_log() {
-	
-	#get login data    
-	$username  = $_POST['log'];
-	$timestamp = date("Y-m-d H:i:s");
-	
-	# check if login succeeded
-		if(is_user_logged_in()) {
-		 $attempt = 'SUCCESS';
+		
+		#get login data    
+		$username  = $_POST['log'];
+		$password  = $_POST['pwd'];
+		$timestamp = date("Y-m-d H:i:s");
+		$attempt   = '';
+		$user      = wp_authenticate_username_password($username,$password);
+		
+		
+		# check if login succeeded
+		
+		if(is_wp_error($user)) {
+		 $attempt = 'FAILURE';
 		 
 		}
 		else {
 			
-		$attempt = 'FAILURE';	
+		$attempt = 'SUCCESS';	
 			
 		}
-	$content = array($timestamp, $username, $attempt); 
-	$content = implode(" ", $content);
-	# write to file
-	
-	#$content = "testing";
-	$file_handle = fopen('/home/tari/data/log/login.log', 'a+');
-	fwrite($file_handle, $content);
-	fclose($file_handle);
+		$content = array($timestamp, $username, $attempt,"\n"); 
+		$content = implode(" ", $content);
+		
+		# write to file
+		$file_handle = fopen('/home/tari/data/log/login.log', 'a+');
+		fwrite($file_handle, $content);
+		fclose($file_handle);
 	}
 	
 	#wp_login is a deprecated function, but in this case it's to be used
-	add_action('wp_login', 'write_to_log');
+	add_action('wp_authenticate', 'write_to_log');
 
 ?>
