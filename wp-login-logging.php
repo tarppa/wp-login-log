@@ -1,6 +1,6 @@
 <?php
 /**
- *	Plugin Name: Login logging
+ *	Plugin Name: WP Login Log
  * 	Description: Write all login attempts to a logfile
  *	Author: https://github.com/tarppa/
  * 	Version: 1.0
