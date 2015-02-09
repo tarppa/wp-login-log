@@ -6,7 +6,7 @@
  * 	Version: 1.0
  *  License: GPL2
  */
-	function write_to_log() {	
+	function write_to_log() {
 		
 		$username  = $_POST['log'];
 		$attempt   = '';
@@ -20,13 +20,13 @@
 		$user = wp_authenticate_username_password( null, $username, $password );
 		
 		if ( is_wp_error( $user ) ) {
-			$attempt = 'FAILURE'; 
+			$attempt = 'FAILURE';
 		
 		} else {
-			$attempt = 'SUCCESS';	
+			$attempt = 'SUCCESS';
 		}
 		
-		$content = array( $timestamp, $username, $attempt,"\n" ); 
+		$content = array( $timestamp, $username, $attempt,"\n" );
 		$content = implode( " ", $content );
 		
 		# write to file
