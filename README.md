@@ -1,7 +1,7 @@
 === wp-login-logging ===
-Contributors: (this should be a list of wordpress.org userid's)
+Contributors: tarppa
 Donate link: http://example.com/
-Tags: login, authentication
+Tags: logging, authentication, log
 Requires at least: 4.1
 Tested up to: 4.1
 Stable tag: [ REMEMBER TO MODIFY ]
