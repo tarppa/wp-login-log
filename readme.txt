@@ -1,4 +1,4 @@
-=== wp-login-log ===
+=== wp-login-logging ===
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: http://example.com/
 Tags: login, authentication
@@ -12,11 +12,11 @@ Write all login attempts to a logfile by replacing default wp_authenticate_usern
 
 == Description ==
 
-Write all login attemps where both username and password are supplied to a log file. The logfile is relative
+Write all login attempts where both username and password are supplied to a log file. The logfile is relative
 to error.log and is called 'login.log', the format : "TIMESTAMP USERNAME SUCCESS/FAILURE".
 
-In practice this plugin is a rewritten version of the wp_authenticate_username_password function and replaces
-it when plugin is enabled.
+In practice this plugin contains a rewritten version of the wp_authenticate_username_password function and replaces
+it when the plugin is enabled.
 
 == Installation ==
 
