@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== wp-login-log ===
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: http://example.com/
 Tags: login, authentication

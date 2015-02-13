@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: WP Login Log
+* Plugin Name: WP Login Logging
 * Description: Write all login attempts to a logfile by replacing default wp_authenticate_username_password functionality
 * Author: https://github.com/tarppa/
 * Version: 0.5
