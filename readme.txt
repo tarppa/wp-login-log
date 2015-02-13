@@ -1,6 +1,5 @@
 === wp-login-logging ===
 Contributors: tarppa
-Donate link: http://example.com/
 Tags: logging, authentication, log
 Requires at least: 4.1
 Tested up to: 4.1
